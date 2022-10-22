@@ -1,0 +1,15 @@
+All
+
+[구성 속성]->[디버깅]->[작업 디렉터리] : $(SolutionDir)FSpring(win64)
+
+[구성 속성]->[C/C++]->[일반]->[추가 포함 디렉터리] : $(SolutionDir)3rdparty/include
+
+[구성 속성]->[링커]->[일반]->[추가 라이브러리 디렉터리] : $(SolutionDir)3rdparty/lib
+
+[구성 속성]->[링커]->[입력]->[추가 종속성]
+opencv_world320.lib
+avcodec.lib
+avformat.lib
+
+[구성 속성]->[빌드 이벤트]->[빌드 후 이벤트]->[명령줄]
+xcopy /Y "$(SolutionDir)3rdparty\bin\*.dll" "$(TargetDir)"
